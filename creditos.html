@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Créditos fotográficos · VELA COL</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-credits">
+  <a class="skip-link" href="#main">Saltar al contenido principal</a>
+  <div class="mesh-bg" aria-hidden="true">
+    <span class="blob blob-1"></span>
+    <span class="blob blob-2"></span>
+  </div>
+
+  <header class="site-header" style="position: static;">
+    <div class="header-inner glass" style="max-width: 900px; margin-inline: auto;">
+      <a href="index.html" class="logo" aria-label="VELA COL — Inicio">
+        <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M32 8c4 6-5 10-5 17a5 5 0 0 0 10 0c0-3.6-2.3-5-2.3-8.6C38.4 19 42 24 42 30a10 10 0 0 1-20 0c0-10 6-13.6 10-22Z"/>
+        </svg>
+        <span class="logo-text">VELA<span class="logo-text-accent">COL</span></span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main" style="max-width: 720px; margin: 3rem auto 6rem; padding-inline: 1.5rem;">
+    <p class="eyebrow"><a href="index.html">← Volver a inicio</a></p>
+    <h1 class="section-title" style="margin-top: 1rem;">Créditos fotográficos</h1>
+    <p class="section-text" style="margin-top: 1rem;">
+      Algunas fotografías de la galería son imágenes libres bajo licencias
+      Creative Commons vía <a href="https://openverse.org" target="_blank" rel="noopener">Openverse</a>.
+      El resto son fotografías propias de VELA COL.
+    </p>
+    <ul class="credits-list" data-credits style="margin-top: 2rem; display: grid; gap: 1rem; padding: 0; list-style: none;"></ul>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© <span id="year">2026</span> VELA COL. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    fetch('assets/credits.json').then(r => r.json()).then(credits => {
+      var list = document.querySelector('[data-credits]');
+      list.innerHTML = Object.values(credits).map(function (c) {
+        return '<li class="glass" style="padding:1rem 1.25rem;border-radius:16px;">' +
+          '<strong>' + c.title + '</strong> por ' +
+          (c.creator_url ? '<a href="' + c.creator_url + '" target="_blank" rel="noopener">' + c.creator + '</a>' : c.creator) +
+          ' (' + c.source + ') · ' +
+          '<a href="' + c.license_url + '" target="_blank" rel="noopener">' + c.license.toUpperCase() + ' ' + (c.license_version || '') + '</a> · ' +
+          '<a href="' + c.foreign_landing_url + '" target="_blank" rel="noopener">Ver original ↗</a>' +
+          '</li>';
+      }).join('');
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

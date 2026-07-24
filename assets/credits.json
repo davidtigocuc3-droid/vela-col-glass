@@ -1,0 +1,57 @@
+{
+  "gallery-2": {
+    "src": "assets/images/gallery-2.webp",
+    "title": "Beeswax candles III",
+    "creator": "tillwe",
+    "creator_url": "https://www.flickr.com/photos/tillwe/",
+    "license": "by-sa",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "foreign_landing_url": "https://www.flickr.com/photos/tillwe/8314297830",
+    "source": "flickr"
+  },
+  "gallery-3": {
+    "src": "assets/images/gallery-3.webp",
+    "title": "Beeswax Candle Making Kit from Kew Gardens Woodland Wonders",
+    "creator": "Annie Mole",
+    "creator_url": "https://www.flickr.com/photos/anniemole/",
+    "license": "by",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "foreign_landing_url": "https://www.flickr.com/photos/anniemole/2468114403",
+    "source": "flickr"
+  },
+  "gallery-4": {
+    "src": "assets/images/gallery-4.webp",
+    "title": "Lit Candles in Heart Shape",
+    "creator": "Public Domain Photos",
+    "creator_url": "https://www.flickr.com/photos/publicdomainphotos/",
+    "license": "by",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "foreign_landing_url": "https://www.flickr.com/photos/publicdomainphotos/6970875634",
+    "source": "flickr"
+  },
+  "gallery-5": {
+    "src": "assets/images/gallery-5.webp",
+    "title": "Colourful gift boxes wrapped in shiny paper with ribbons",
+    "creator": "Bigul Malayi",
+    "creator_url": null,
+    "license": "cc0",
+    "license_version": "1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "foreign_landing_url": "https://pd.w.org/2025/12/120694383a5c25fd6.14424525-1536x2048.jpeg",
+    "source": "openverse"
+  },
+  "gallery-6": {
+    "src": "assets/images/gallery-6.webp",
+    "title": "Detail - Pink Wax Flower",
+    "creator": "Katia de la Luz",
+    "creator_url": "https://www.flickr.com/photos/katiadelaluz/",
+    "license": "by",
+    "license_version": "2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "foreign_landing_url": "https://www.flickr.com/photos/katiadelaluz/6222097669",
+    "source": "flickr"
+  }
+}
