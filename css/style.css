@@ -458,10 +458,12 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   font-size: .78rem;
   font-weight: 700;
   color: var(--terracotta-text);
+  background: rgba(193, 103, 59, .12);
+  border: 1px solid rgba(193, 103, 59, .35);
   transition: transform var(--dur-fast) var(--ease), background var(--dur-fast) var(--ease);
 }
 .catalog-pill svg { width: 14px; height: 14px; }
-.catalog-pill:hover { transform: translateY(-2px); background: var(--glass-bg-strong); }
+.catalog-pill:hover { transform: translateY(-2px); background: rgba(193, 103, 59, .2); }
 
 .hero-visual { position: relative; animation: heroFadeScaleIn .7s var(--ease) .22s both; }
 .hero-visual-frame {
