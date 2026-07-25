@@ -512,7 +512,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 .scroll-indicator {
   position: absolute;
   left: 50%;
-  bottom: clamp(1rem, 3vw, 2rem);
+  bottom: clamp(.25rem, 1vw, .75rem);
   transform: translateX(-50%);
   z-index: 2;
   display: flex;
