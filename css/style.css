@@ -823,18 +823,56 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 .back-to-top:hover { background: var(--glass-bg-strong); transform: translateY(-3px); }
 
 /* ============================================================
-   WHATSAPP FLOAT
+   FLOATING BUTTON STACK (WhatsApp + catalog downloads)
    ============================================================ */
-.whatsapp-float {
+.float-stack {
   position: fixed;
   right: clamp(1rem, 3vw, 2rem);
   bottom: clamp(1rem, 3vw, 2rem);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+}
+.float-btn {
+  position: relative;
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--terracotta-text);
+  box-shadow: 0 10px 24px -10px rgba(43,35,27,.4);
+  border: 1px solid rgba(255,255,255,.6);
+  transition: transform var(--dur-fast) var(--ease), background var(--dur-fast) var(--ease);
+}
+.float-btn svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; }
+.float-btn:hover { transform: translateY(-3px); background: var(--glass-bg-strong); }
+.float-btn-tooltip {
+  position: absolute;
+  right: calc(100% + .7rem);
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  background: var(--charcoal);
+  color: var(--ivory);
+  font-size: .78rem;
+  font-weight: 600;
+  padding: .4rem .7rem;
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur-fast) var(--ease);
+}
+.float-btn:hover .float-btn-tooltip,
+.float-btn:focus-visible .float-btn-tooltip { opacity: 1; }
+
+.whatsapp-float {
+  position: relative;
   width: 60px; height: 60px;
   border-radius: 50%;
   background: #25D366;
   color: #fff;
   display: flex; align-items: center; justify-content: center;
-  z-index: 200;
   box-shadow: 0 12px 30px -8px rgba(37,211,102,.55);
   border: 1px solid rgba(255,255,255,.5);
 }
