@@ -441,6 +441,32 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   animation: heroFadeSlideUp .6s var(--ease) .48s both;
 }
 
+.hero-catalogs {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .6rem 1rem;
+  animation: heroFadeSlideUp .6s var(--ease) .54s both;
+}
+.hero-catalogs-label {
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+.catalog-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  font-size: .85rem;
+  font-weight: 700;
+  color: var(--terracotta-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.catalog-link svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; }
+.catalog-link:hover { color: var(--terracotta-dark); }
+
 .hero-visual { position: relative; animation: heroFadeScaleIn .7s var(--ease) .22s both; }
 .hero-visual-frame {
   aspect-ratio: 4/5;
