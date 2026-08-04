@@ -29,6 +29,50 @@
   window.addEventListener('scroll', onScrollHeader, { passive: true });
 
   /* ---------------------------------------------------------
+     Hero background video
+     Autoplay only when it won't cost the user: skip it for
+     prefers-reduced-motion and Data Saver, and just leave the
+     poster image (a normal <img>-equivalent still frame) in place.
+     A visible toggle lets anyone stop it regardless.
+  --------------------------------------------------------- */
+  var heroVideo = document.getElementById('heroVideo');
+  var videoToggle = document.getElementById('heroVideoToggle');
+  if (heroVideo && videoToggle) {
+    var iconPause = videoToggle.querySelector('.icon-pause');
+    var iconPlay = videoToggle.querySelector('.icon-play');
+    var saveData = !!(navigator.connection && navigator.connection.saveData);
+
+    function setToggleState(isPlaying) {
+      videoToggle.setAttribute('aria-pressed', String(!isPlaying));
+      videoToggle.setAttribute('aria-label', isPlaying ? 'Pausar video de fondo' : 'Reproducir video de fondo');
+      iconPause.hidden = !isPlaying;
+      iconPlay.hidden = isPlaying;
+    }
+
+    if (!prefersReducedMotion && !saveData) {
+      heroVideo.preload = 'auto';
+      heroVideo.play().then(function () {
+        setToggleState(true);
+      }).catch(function () {
+        // Autoplay blocked by the browser — poster stays visible, button offers manual play.
+        setToggleState(false);
+      });
+    } else {
+      setToggleState(false);
+    }
+
+    videoToggle.addEventListener('click', function () {
+      if (heroVideo.paused) {
+        heroVideo.preload = 'auto';
+        heroVideo.play().then(function () { setToggleState(true); }).catch(function () {});
+      } else {
+        heroVideo.pause();
+        setToggleState(false);
+      }
+    });
+  }
+
+  /* ---------------------------------------------------------
      Mobile menu
   --------------------------------------------------------- */
   var navToggle = document.getElementById('navToggle');

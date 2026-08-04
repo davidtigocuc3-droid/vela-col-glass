@@ -162,6 +162,22 @@
 
     <!-- ============ 1. HERO ============ -->
     <section class="hero" id="top">
+      <div class="hero-video-wrap" aria-hidden="true">
+        <video
+          class="hero-video"
+          id="heroVideo"
+          poster="assets/images/hero-candles.webp"
+          muted
+          loop
+          playsinline
+          preload="none"
+          disablepictureinpicture
+        >
+          <source src="assets/videos/hero-vela.mp4" type="video/mp4">
+        </video>
+        <div class="hero-video-overlay"></div>
+      </div>
+
       <div class="hero-inner">
         <div class="hero-content glass" data-reveal>
           <p class="eyebrow" data-hero-anim>Velas artesanales · Hechas a mano en Colombia</p>
@@ -213,10 +229,14 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 8 13v14l12 7 12-7V13Z" transform="scale(0.7) translate(3,-4)"/></svg>
             <span>Aromas y recuerdos</span>
           </div>
+          <button class="video-toggle glass" id="heroVideoToggle" type="button" aria-pressed="false" aria-label="Pausar video de fondo">
+            <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+            <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M8 5v14l11-7Z"/></svg>
+          </button>
         </div>
       </div>
 
-      <button class="scroll-indicator" id="scrollIndicator" aria-label="Desplázate hacia abajo">
+      <button class="scroll-indicator glass" id="scrollIndicator" aria-label="Desplázate hacia abajo">
         <span class="scroll-indicator-line"><span></span></span>
         <span class="scroll-indicator-text">Desliza</span>
       </button>
